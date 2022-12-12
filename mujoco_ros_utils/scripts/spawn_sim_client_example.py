@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # Copyright 2018 Shadow Robot Company Ltd.
 #
@@ -37,7 +37,7 @@ class SpawnSimClient(object):
             if response.success is True:
                 rospy.loginfo("Sim environment successfully spawned!")
             return response.success
-        except rospy.ServiceException,   e:
+        except rospy.ServiceException as e:
             rospy.logerr("Service Call Failed:  %s" % e)
 
     def _send_request(self):
@@ -45,7 +45,7 @@ class SpawnSimClient(object):
 
         # Dummy obj 1
         rec_object_1 = RecognizedObject()
-        rec_object_1.type.key = "box"
+        rec_object_1.type.key = "base"
         rec_object_1.pose.pose.pose.position.x = 0.1
         rec_object_1.pose.pose.pose.position.y = 0.7
         rec_object_1.pose.pose.pose.position.z = 0
@@ -56,7 +56,7 @@ class SpawnSimClient(object):
 
         # Dummy obj 2
         rec_object_2 = RecognizedObject()
-        rec_object_2.type.key = "box"
+        rec_object_2.type.key = "base"
         rec_object_2.pose.pose.pose.position.x = 0.3
         rec_object_2.pose.pose.pose.position.y = 1
         rec_object_2.pose.pose.pose.position.z = 0

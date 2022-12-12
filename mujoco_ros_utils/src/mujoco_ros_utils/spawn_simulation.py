@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # Copyright 2018 Shadow Robot Company Ltd.
 #
@@ -30,9 +30,9 @@ class SpawnSimulation(object):
     """
 
     def __init__(self):
-        self._xml_config_dir = rospkg.RosPack().get_path("fh_description") + "/mujoco_models"
-        self._robot_launch_file = rospy.get_param("~robot_launch_file", "fh_robot_launch fh_ur10_and_fh2_mujoco.launch")
-        base_mujoco_env_filename = rospy.get_param("~base_mujoco_env_filename", "ur10_fh_environment.xml")
+        self._xml_config_dir = rospkg.RosPack().get_path("sr_description") + "/mujoco_models"
+        self._robot_launch_file = rospy.get_param("~robot_launch_file", "sr_robot_launch sr_ur_arm_hand_mujoco.launch")
+        base_mujoco_env_filename = rospy.get_param("~base_mujoco_env_filename", "sr_ur_hand_e_environment.xml")
         self._generated_mujoco_env_filename = rospy.get_param("~generated_mujoco_env_filename", "test.xml")
         self._base_config_xml = xmlTool.parse('{}/{}'.format(self._xml_config_dir, base_mujoco_env_filename))
         self._obj_names_list = []
@@ -75,7 +75,7 @@ class SpawnSimulation(object):
             rospy.loginfo("Starting simulation..")
             try:
                 process = subprocess.Popen(['xterm -e roslaunch {} \
-                                            robot_model_path:={}/{}'.format(self._robot_launch_file,
+                                            robot_model_filename:={}/{}'.format(self._robot_launch_file,
                                             self._xml_config_dir, self._generated_mujoco_env_filename)],
                                            shell=True)
             except OSError as e:
