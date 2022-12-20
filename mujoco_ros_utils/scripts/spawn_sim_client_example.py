@@ -44,27 +44,27 @@ class SpawnSimClient(object):
         request = RecognizedObjectArray()
 
         # Dummy obj 1
-        rec_object_1 = RecognizedObject()
-        rec_object_1.type.key = "base"
-        rec_object_1.pose.pose.pose.position.x = 0.1
-        rec_object_1.pose.pose.pose.position.y = 0.7
-        rec_object_1.pose.pose.pose.position.z = 0
-        rec_object_1.pose.pose.pose.orientation.x = 0.707
-        rec_object_1.pose.pose.pose.orientation.y = -0.707
-        rec_object_1.pose.pose.pose.orientation.z = 0
-        rec_object_1.pose.pose.pose.orientation.w = 0
+        #rec_object_1 = RecognizedObject()
+        #rec_object_1.type.key = "base"
+        #rec_object_1.pose.pose.pose.position.x = 0.1
+        #rec_object_1.pose.pose.pose.position.y = 0.7
+        #rec_object_1.pose.pose.pose.position.z = 0
+        #rec_object_1.pose.pose.pose.orientation.x = 0.707
+        #rec_object_1.pose.pose.pose.orientation.y = -0.707
+        #rec_object_1.pose.pose.pose.orientation.z = 0
+        #rec_object_1.pose.pose.pose.orientation.w = 0
 
         # Dummy obj 2
-        rec_object_2 = RecognizedObject()
-        rec_object_2.type.key = "base"
-        rec_object_2.pose.pose.pose.position.x = 0.3
-        rec_object_2.pose.pose.pose.position.y = 1
-        rec_object_2.pose.pose.pose.position.z = 0
-        rec_object_2.pose.pose.pose.orientation.x = 0.707
-        rec_object_2.pose.pose.pose.orientation.y = 0
-        rec_object_2.pose.pose.pose.orientation.z = 0
-        rec_object_2.pose.pose.pose.orientation.w = 0.707
-        request.objects = [rec_object_1, rec_object_2]
+        #rec_object_2 = RecognizedObject()
+        #rec_object_2.type.key = "base"
+        #rec_object_2.pose.pose.pose.position.x = 0.3
+        #rec_object_2.pose.pose.pose.position.y = 1
+        #rec_object_2.pose.pose.pose.position.z = 0
+        #rec_object_2.pose.pose.pose.orientation.x = 0.707
+        #rec_object_2.pose.pose.pose.orientation.y = 0
+        #rec_object_2.pose.pose.pose.orientation.z = 0
+        #rec_object_2.pose.pose.pose.orientation.w = 0.707
+        #request.objects = [rec_object_1, rec_object_2]
         self._request_sim(request)
 
 if __name__ == '__main__':
